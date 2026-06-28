@@ -1,8 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
+// https://angular.dev/guide/templates/pipes#using-pipes
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
