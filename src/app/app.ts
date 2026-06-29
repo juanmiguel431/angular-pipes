@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { TemperaturePipe } from '../pipes/temperature.pipe';
+import { SortPipe } from '../pipes/sort.pipe';
 
 // https://angular.dev/guide/templates/pipes#using-pipes
 @Component({
   selector: 'app-root',
-  imports: [DatePipe, DecimalPipe, TemperaturePipe],
+  imports: [DatePipe, TemperaturePipe, SortPipe],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -21,6 +22,8 @@ export class App {
   historicTemperatures = [25, 37, 19, -4, 28, 21, 19, 28, 33, 31, 9, 11, 5, -12, -5];
 
   onReset(index: number) {
-    this.historicTemperatures[index] = 18;
+    // TODO this is not going to work because we are using the sort pipe
+    console.log(index);
+    // this.historicTemperatures[index] = 18;
   }
 }
